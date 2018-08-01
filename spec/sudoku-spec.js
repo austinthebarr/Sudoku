@@ -100,4 +100,17 @@ describe('Sudoku', function(){
                            [1,8,9,4,3,7,2,6,5]])
     expect(board.checkRow()).toEqual(true);
   });
+  it('THREE  BY THREE', function(){
+    let board = new Sudoku([[8,6,1],
+                           [3,5,2],
+                           [4,9,7]])
+    expect(board.checkThreeByThree()).toEqual(true);
+  });
+  it('THREE  BY THREE will fail', function(){
+    let board = new Sudoku([[8,9,1],
+                           [3,5,2],
+                           [4,9,7]])
+    expect(board.checkThreeByThree()).toEqual(false);
+  });
+
 });

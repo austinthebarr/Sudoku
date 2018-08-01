@@ -24,7 +24,7 @@ export class Sudoku{
     let desiredList = [1,2,3,4,5,6,7,8,9];
     let checkArra = this.board.slice();
     for(let i = 0; i < checkArra.length; i++){
-      let tempRow = []
+      let tempRow = [];
       for(let j = 0; j < checkArra.length; j++){
         tempRow.push(this.board[j][i]);
       }
@@ -42,4 +42,24 @@ export class Sudoku{
     return true;
   };
 
+  checkThreeByThree(){
+    let final = [];
+    let desiredList = [1,2,3,4,5,6,7,8,9];
+    let checkArra = this.board.slice();
+    for(let i = 0; i < checkArra.length; i++){
+      for(let j = 0; j < checkArra.length; j++)
+      {
+        final.push(checkArra[i][j]);
+      }
+    }
+    let sortArra = final.sort();
+      for(let j = 0; j < sortArra.length; j++){
+        if(sortArra[j] != desiredList[j]){
+          return false;
+        }
+      }
+    console.log(checkArra)
+    console.log(final)
+    return true;
+  }
 }
