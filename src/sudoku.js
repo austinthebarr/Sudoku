@@ -48,23 +48,29 @@ export class Sudoku{
     let checkArra = this.board.slice();
     let startingPoint = 0;
     let condition = 3;
-    console.log(checkArra)
+    let iStartingPoint = 0;
+    let iCondition = 3;
     for(let k = 0; k < checkArra.length; k++){
       let tempRow = [];
-      for(let i = 0; i < 3; i++){
-        console.log(tempRow);
+      for(let i = iStartingPoint; i < iCondition; i++){
         for(let j = startingPoint; j < condition; j++){
           tempRow.push(checkArra[i][j]);
         }
       }
       final.push(tempRow)
-      console.log(startingPoint)
         startingPoint += 3;
        condition += 3;
-      console.log(condition)
+       console.log(condition)
+       console.log(startingPoint)
+      if(condition == 12){
+        iStartingPoint += 3
+        iCondition += 3
+        startingPoint -= 9
+        condition -= 9
+      }
     }
     console.log(final)
-  
+
     return true;
   }
 }
