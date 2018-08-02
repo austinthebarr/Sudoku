@@ -8,7 +8,7 @@ export class Sudoku{
     const desiredList = [1,2,3,4,5,6,7,8,9];
     let checkArra = this.board.slice();
     for(let i = 0; i < checkArra.length; i++){
-      let sortArra = checkArra[i].sort();
+      let sortArra = checkArra[i].slice().sort();
       for(let j = 0; j < sortArra.length; j++)
       {
         if(sortArra[j] != desiredList[j]){
@@ -93,5 +93,9 @@ export class Sudoku{
       }
     }
     return true;
+  }
+
+  completeCheck(){
+    return (this.checkRow() && this.checkColumn() && this.checkNineByNine());
   }
 }
