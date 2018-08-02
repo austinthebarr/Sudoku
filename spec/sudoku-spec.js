@@ -100,17 +100,30 @@ describe('Sudoku', function(){
                            [1,8,9,4,3,7,2,6,5]])
     expect(board.checkRow()).toEqual(true);
   });
-  it('THREE  BY THREE', function(){
-    let board = new Sudoku([[8,6,1],
-                           [3,5,2],
-                           [4,9,7]])
+  // it('THREE  BY THREE', function(){
+  //   let board = new Sudoku([[8,6,1],
+  //                          [3,5,2],
+  //                          [4,9,7]])
+  //   expect(board.checkThreeByThree()).toEqual(true);
+  // });
+  // it('THREE  BY THREE will fail', function(){
+  //   let board = new Sudoku([[8,9,1],
+  //                          [3,5,2],
+  //                          [4,9,7]])
+  //   expect(board.checkThreeByThree()).toEqual(false);
+  // });
+  it('test', function(){
+    let board = new Sudoku([[8,6,1,7,9,4,3,5,2],
+                           [3,5,2,1,6,8,7,4,9],
+                           [4,9,7,2,5,3,1,8,6],
+                           [2,1,8,9,7,5,6,3,4],
+                           [6,7,5,3,4,1,9,2,8],
+                           [9,3,4,6,8,2,5,1,7],
+                           [5,2,6,8,1,9,4,7,3],
+                           [7,4,3,5,2,6,8,9,1],
+                           [1,8,9,4,3,7,2,6,5]])
     expect(board.checkThreeByThree()).toEqual(true);
   });
-  it('THREE  BY THREE will fail', function(){
-    let board = new Sudoku([[8,9,1],
-                           [3,5,2],
-                           [4,9,7]])
-    expect(board.checkThreeByThree()).toEqual(false);
-  });
+
 
 });

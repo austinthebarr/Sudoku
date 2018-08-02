@@ -19,7 +19,7 @@ export class Sudoku{
     return true;
   };
 
-    checkColumn() {
+  checkColumn() {
     let final = [];
     let desiredList = [1,2,3,4,5,6,7,8,9];
     let checkArra = this.board.slice();
@@ -46,20 +46,25 @@ export class Sudoku{
     let final = [];
     let desiredList = [1,2,3,4,5,6,7,8,9];
     let checkArra = this.board.slice();
-    for(let i = 0; i < checkArra.length; i++){
-      for(let j = 0; j < checkArra.length; j++)
-      {
-        final.push(checkArra[i][j]);
-      }
-    }
-    let sortArra = final.sort();
-      for(let j = 0; j < sortArra.length; j++){
-        if(sortArra[j] != desiredList[j]){
-          return false;
+    let startingPoint = 0;
+    let condition = 3;
+    console.log(checkArra)
+    for(let k = 0; k < checkArra.length; k++){
+      let tempRow = [];
+      for(let i = 0; i < 3; i++){
+        console.log(tempRow);
+        for(let j = startingPoint; j < condition; j++){
+          tempRow.push(checkArra[i][j]);
         }
       }
-    console.log(checkArra)
+      final.push(tempRow)
+      console.log(startingPoint)
+        startingPoint += 3;
+       condition += 3;
+      console.log(condition)
+    }
     console.log(final)
+  
     return true;
   }
 }
